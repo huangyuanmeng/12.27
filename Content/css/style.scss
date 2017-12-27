@@ -1,0 +1,107 @@
+@charset "utf-8";
+*{
+  margin:0px;
+  padding:0px;
+  text-decoration:none;
+  box-sizing:border-box;
+  font-size:.14rem;
+  font-style:normal;
+  font-weight:normal;
+}
+ul,li{
+  list-style:none;
+}
+html{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size:625%;
+}
+img,div,body,html,ul,li,a{
+ -webkit-touch-callout: none; 
+ }
+ input,button{
+ outline:0;
+
+ }
+/*  input,textarea,button{
+ -webkit-appearance: none;
+ -moz-appearance: none ;
+ appearance: none ;
+} */
+ button{
+ cursor:pointer;
+ }
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+@mixin num($h:100%,$w:100%){
+    height:$h;
+    width:$w;
+}
+html,body,.wrap{
+    @include num();
+    background: #818D9B;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+header{
+    @include num(.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#393A3F;
+    a{
+        padding:0 .1rem;
+        color:#fff;
+        font-size: .15rem;
+        &:nth-child(2){
+            flex:1;
+        }
+    }
+}
+section{
+    flex: 1;
+    overflow-y: scroll;
+    padding:.12rem;
+    .main{
+        @include num(auto);
+        background: #fff;
+        border-radius: .1rem;
+        padding:.1rem;
+        dl{
+            @include num(auto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            dt{
+            @include num(auto,1rem);
+            img{
+                @include num(auto); 
+            }
+            }
+        }
+        p{
+            @include num(auto);
+            margin:.1rem 0;
+            input{
+                @include num(.3rem);
+                border: none;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+        button{
+            @include num(.3rem);
+            border:none;
+            background: #2FBA77;
+            color:#fff;
+            border-radius: .08rem;
+            margin:.2rem 0;
+        }
+    }
+}
